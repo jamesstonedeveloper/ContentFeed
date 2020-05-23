@@ -1,7 +1,8 @@
-package com.jamesstonedeveloper.contentfeed
+package com.jamesstonedeveloper.contentfeed.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jamesstonedeveloper.contentfeed.R
 
 class MainActivity : AppCompatActivity() {
 
