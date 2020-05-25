@@ -1,4 +1,4 @@
-package com.jamesstonedeveloper.contentfeed.data.repository
+package com.jamesstonedeveloper.contentfeed.utils
 
 import io.realm.Realm
 import io.realm.RealmObject
