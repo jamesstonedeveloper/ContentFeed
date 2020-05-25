@@ -8,7 +8,7 @@ class PostsRepository {
         val dummyList = mutableListOf<Post>()
         for (i in 0..10) {
             val dummyString: String = i.toString()
-            dummyList.add(Post(dummyString, dummyString, dummyString))
+            dummyList.add(Post(dummyString, "Test Post", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed interdum ante. Suspendisse ultrices sit."))
         }
         return dummyList
     }

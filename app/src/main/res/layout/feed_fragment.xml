@@ -7,7 +7,7 @@
             type="com.jamesstonedeveloper.contentfeed.ui.feed.FeedViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:background="@color/colorPrimary"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.feed.FeedFragment">
