@@ -1,4 +1,4 @@
-package com.jamesstonedeveloper.contentfeed.ui.base
+package com.jamesstonedeveloper.contentfeed.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
