@@ -11,7 +11,5 @@ class PostsOutdatedManager {
                     RealmUtils().deleteObjectFromRealm(post)
                 }
             }
-
-
     }
 }

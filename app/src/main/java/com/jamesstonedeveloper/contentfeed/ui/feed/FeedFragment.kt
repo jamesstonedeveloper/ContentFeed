@@ -1,10 +1,8 @@
 package com.jamesstonedeveloper.contentfeed.ui.feed
 
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +10,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.jamesstonedeveloper.contentfeed.R
 import com.jamesstonedeveloper.contentfeed.databinding.FeedFragmentBinding
 import com.jamesstonedeveloper.contentfeed.base.BaseFragment
-import com.jamesstonedeveloper.contentfeed.data.entities.Post
 
 class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     private val viewModel: FeedViewModel by viewModels()

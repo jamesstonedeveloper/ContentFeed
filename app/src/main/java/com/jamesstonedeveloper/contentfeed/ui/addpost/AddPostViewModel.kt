@@ -1,14 +1,11 @@
 package com.jamesstonedeveloper.contentfeed.ui.addpost
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jamesstonedeveloper.contentfeed.data.api.APIResponseCallback
 import com.jamesstonedeveloper.contentfeed.data.api.PostsAPI
 import com.jamesstonedeveloper.contentfeed.data.entities.Post
-import com.jamesstonedeveloper.contentfeed.utils.SingleLiveEvent
 
 class AddPostViewModel : ViewModel() {
     private val postsAPI = PostsAPI()

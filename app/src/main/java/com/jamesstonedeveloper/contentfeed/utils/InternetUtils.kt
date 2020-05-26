@@ -3,7 +3,6 @@ package com.jamesstonedeveloper.contentfeed.utils
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
-import android.net.NetworkCapabilities
 import android.net.NetworkRequest
 
 class InternetUtils() {
@@ -28,7 +27,6 @@ class InternetUtils() {
     private var networkCallback = object : ConnectivityManager.NetworkCallback() {
         override fun onLost(network: Network?) {
             isInternetAvailable = false
-            //record wi-fi disconnect event
         }
         override fun onUnavailable() {
             isInternetAvailable = false
@@ -37,7 +35,6 @@ class InternetUtils() {
         }
         override fun onAvailable(network: Network?) {
             isInternetAvailable = true
-            //record wi-fi connect event
         }
     }
 

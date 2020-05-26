@@ -17,6 +17,7 @@ class PostsAPI {
             ref.set(post)
                     .addOnCompleteListener {
                         if (it.exception != null) {
+                            apiCallback.onFailure("Failed to upload post")
                             return@addOnCompleteListener
                         }
                         if (it.isSuccessful) {
