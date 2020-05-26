@@ -19,7 +19,7 @@
         android:layout_height="match_parent"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/feed_fab"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:fabCustomSize="50dp"
