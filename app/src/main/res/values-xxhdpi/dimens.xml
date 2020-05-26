@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	//margins
+	<dimen name="margin_tiny">6dp</dimen>
+	<dimen name="margin_small">12dp</dimen>
+	<dimen name="margin_medium">18dp</dimen>
+	<dimen name="margin_large">24dp</dimen>
+	<dimen name="margin_extra_large">32dp</dimen>
+
+	//text sizes
+	<dimen name="text_size_small">12sp</dimen>
+	<dimen name="text_size_medium">18sp</dimen>
+	<dimen name="text_size_large">24sp</dimen>
+
+	//sizes
+	<dimen name="fab_size">50dp</dimen>
+
+	//radius
+	<dimen name="corner_radius_small">5dp</dimen>
+
+	//elevation
+	<dimen name="elevation_post_item">5dp</dimen>
+</resources>

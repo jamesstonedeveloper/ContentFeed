@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">ContentFeed</string>
+
+    //add post
+    <string name="add_post_content_hint">Content</string>
+    <string name="add_post_title_hint">Title</string>
+    <string name="add_post_upload_btn_text">Upload</string>
+    <string name="add_post_success">Your post was uploaded</string>
+
+    //Errors
+    <string name="server_connection_failure">Failed to connect to the server</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="upload_post_failed">Failed to upload your post</string>
+
+    //Prompts
+    <string name="prompt_enter_title">Please enter a title</string>
+    <string name="prompt_enter_content">Please enter some content</string>
+
+    //Snackbar
+    <string name="snackbar_dismiss">Dismiss</string>
+    <string name="snackbar_retry">Retry</string>
 </resources>

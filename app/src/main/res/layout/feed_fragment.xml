@@ -28,19 +28,20 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/feed_fab"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="32dp"
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="@dimen/margin_extra_large"
+                android:layout_marginBottom="@dimen/margin_extra_large"
                 android:background="@android:color/transparent"
                 android:clickable="true"
                 android:onClick="@{() -> viewModel.goToAddPost()}"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add_icon"
-                app:fabCustomSize="50dp"
+                app:fabCustomSize="@dimen/fab_size"
                 app:fabSize="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:focusable="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

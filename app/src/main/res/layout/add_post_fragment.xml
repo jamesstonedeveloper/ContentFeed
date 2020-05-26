@@ -17,11 +17,11 @@
         android:id="@+id/addpost_til_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:hint="Content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:hint="@string/add_post_content_hint"
         app:layout_constraintBottom_toTopOf="@+id/addpost_btn_upload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,9 @@
             android:id="@+id/addpost_tiet_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@={addPostViewModel.contentInput}"/>
+            android:maxLength="500"
+            android:text="@={addPostViewModel.contentInput}"
+            android:textSize="@dimen/text_size_medium" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -39,10 +41,10 @@
         android:id="@+id/addpost_til_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:hint="Title"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/add_post_title_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -51,7 +53,11 @@
             android:id="@+id/addpost_tied_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@={addPostViewModel.titleInput}"/>
+            android:inputType="textCapWords"
+            android:maxLength="100"
+            android:singleLine="true"
+            android:text="@={addPostViewModel.titleInput}"
+            android:textSize="@dimen/text_size_medium" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,9 +66,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_ripple_color_accent"
-        android:text="Upload"
         android:onClick="@{()->addPostViewModel.uploadPost()}"
+        android:text="@string/add_post_upload_btn_text"
         android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,0 +1,13 @@
+<resources>
+	<dimen name="margin_small">9.6dp</dimen>
+	<dimen name="fab_size">40dp</dimen>
+	<dimen name="margin_large">19.2dp</dimen>
+	<dimen name="margin_medium">14.4dp</dimen>
+	<dimen name="margin_tiny">4.8dp</dimen>
+	<dimen name="margin_extra_large">25.6dp</dimen>
+	<dimen name="corner_radius_small">4dp</dimen>
+	<dimen name="elevation_post_item">4dp</dimen>
+	<dimen name="text_size_small">9.6sp</dimen>
+	<dimen name="text_size_medium">14.4sp</dimen>
+	<dimen name="text_size_large">19.2sp</dimen>
+</resources>

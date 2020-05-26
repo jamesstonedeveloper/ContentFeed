@@ -15,6 +15,7 @@ import com.jamesstonedeveloper.contentfeed.data.api.PostsAPI
 import com.jamesstonedeveloper.contentfeed.data.api.SyncCallback
 import com.jamesstonedeveloper.contentfeed.databinding.ActivityMainBinding
 import com.jamesstonedeveloper.contentfeed.utils.InternetUtils
+import com.jamesstonedeveloper.contentfeed.utils.StringUtils
 import io.realm.Realm
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         InternetUtils(this)
+        StringUtils(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)

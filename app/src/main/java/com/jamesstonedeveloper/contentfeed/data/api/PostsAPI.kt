@@ -3,10 +3,12 @@ package com.jamesstonedeveloper.contentfeed.data.api
 import android.content.ContentValues.TAG
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
+import com.jamesstonedeveloper.contentfeed.R
 import com.jamesstonedeveloper.contentfeed.data.entities.Post
 import com.jamesstonedeveloper.contentfeed.utils.InternetUtils
 import com.jamesstonedeveloper.contentfeed.utils.PostsOutdatedManager
 import com.jamesstonedeveloper.contentfeed.utils.RealmUtils
+import com.jamesstonedeveloper.contentfeed.utils.StringUtils
 import java.util.*
 
 class PostsAPI {
@@ -19,17 +21,17 @@ class PostsAPI {
             ref.set(post)
                     .addOnCompleteListener {
                         if (it.exception != null) {
-                            apiCallback.onFailure("Failed to upload post")
+                            apiCallback.onFailure(StringUtils.instance.getString(R.string.upload_post_failed) ?: "")
                             return@addOnCompleteListener
                         }
                         if (it.isSuccessful) {
                             apiCallback.onSuccess()
                         } else {
-                            apiCallback.onFailure("Failed to upload post")
+                            apiCallback.onFailure(StringUtils.instance.getString(R.string.upload_post_failed) ?: "")
                         }
                     }
         } else {
-            apiCallback.onFailure("No internet connection")
+            apiCallback.onFailure(StringUtils.instance.getString(R.string.no_internet_connection) ?: "")
         }
 
     }
@@ -39,7 +41,7 @@ class PostsAPI {
             database.collection("posts")
                     .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                         if (firebaseFirestoreException != null) {
-                            syncErrorCallback.onSyncFailure("Failed to connect to the server")
+                            syncErrorCallback.onSyncFailure(StringUtils.instance.getString(R.string.server_connection_failure) ?: "")
                             return@addSnapshotListener
                         }
 
@@ -56,7 +58,7 @@ class PostsAPI {
                         syncErrorCallback.onSyncSuccess()
                     }
         } else {
-            syncErrorCallback.onSyncFailure("No internet connection")
+            syncErrorCallback.onSyncFailure(StringUtils.instance.getString(R.string.no_internet_connection) ?: "")
         }
     }
 

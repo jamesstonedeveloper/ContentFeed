@@ -10,7 +10,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.jamesstonedeveloper.contentfeed.R
 import com.jamesstonedeveloper.contentfeed.databinding.FeedFragmentBinding
 import com.jamesstonedeveloper.contentfeed.base.BaseFragment
-import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     private val viewModel: FeedViewModel by viewModels()
@@ -47,8 +46,8 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
         })
 
         viewModel.syncFailed.observe(this, Observer {
-            Snackbar.make(binding.root, "Failed to connect to the server", Snackbar.LENGTH_LONG)
-                .setAction("Retry") {
+            Snackbar.make(binding.root, R.string.server_connection_failure, Snackbar.LENGTH_LONG)
+                .setAction(getString(R.string.snackbar_retry)) {
                     viewModel.startSync()
                 }.show()
         })

@@ -34,7 +34,7 @@ class AddPostFragment : BaseFragment<AddPostFragmentBinding>() {
 
         viewModel.errorMessage.observe(this, Observer {
             val snackBar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
-            snackBar.setAction("Dismiss") {
+            snackBar.setAction(getString(R.string.snackbar_dismiss)) {
                 snackBar.dismiss()
             }
             snackBar.show()
