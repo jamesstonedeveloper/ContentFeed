@@ -10,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.jamesstonedeveloper.contentfeed.R
 import com.jamesstonedeveloper.contentfeed.databinding.FeedFragmentBinding
 import com.jamesstonedeveloper.contentfeed.base.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     private val viewModel: FeedViewModel by viewModels()
@@ -19,6 +20,8 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
 
     override fun setUpViews() {
         super.setUpViews()
+        toolbar?.setDisplayHomeAsUpEnabled(false)
+        toolbar?.setDisplayShowHomeEnabled(false)
         binding.feedRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.feedRv.adapter = feedListAdapter
         binding.feedSwipeRefreshLayout.setOnRefreshListener {
@@ -29,9 +32,6 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     override fun observeViewModel() {
         super.observeViewModel()
         binding.viewModel = viewModel
-
-        viewModel.getPostsFromDB()
-        viewModel.startSync()
 
         viewModel.postsList.observe(this, Observer {
             feedListAdapter.submitList(it)

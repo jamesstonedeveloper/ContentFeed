@@ -1,5 +1,7 @@
 package com.jamesstonedeveloper.contentfeed.ui.feed
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jamesstonedeveloper.contentfeed.data.api.PostsAPI
@@ -21,7 +23,11 @@ class FeedViewModel : ViewModel() {
         postsList.postValue(RealmUtils().copyListFromRealm(results))
     }
 
-    fun getPostsFromDB() {
+    init {
+        startSync()
+    }
+
+    private fun getPostsFromDB() {
         postsRepository.getPostsFromDB()
             .addChangeListener(postsRealmListener)
         postsRealmListener.onChange(postsRepository.getPostsFromDB())

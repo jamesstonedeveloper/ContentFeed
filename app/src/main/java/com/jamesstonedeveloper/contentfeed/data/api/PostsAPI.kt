@@ -1,5 +1,7 @@
 package com.jamesstonedeveloper.contentfeed.data.api
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.jamesstonedeveloper.contentfeed.data.entities.Post
 import com.jamesstonedeveloper.contentfeed.utils.InternetUtils

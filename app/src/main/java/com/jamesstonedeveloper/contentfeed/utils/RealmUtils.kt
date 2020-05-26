@@ -28,7 +28,6 @@ class RealmUtils {
     }
 
     fun <realmObject: RealmObject> copyListFromRealm(listToCopy: List<realmObject>): List<realmObject> {
-        Log.i(TAG, "copyListFromRealm: " + listToCopy.size)
         return realm.copyFromRealm(listToCopy)
     }
 
