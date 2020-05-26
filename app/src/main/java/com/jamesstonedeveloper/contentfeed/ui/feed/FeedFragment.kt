@@ -1,15 +1,18 @@
 package com.jamesstonedeveloper.contentfeed.ui.feed
 
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.jamesstonedeveloper.contentfeed.R
 import com.jamesstonedeveloper.contentfeed.databinding.FeedFragmentBinding
 import com.jamesstonedeveloper.contentfeed.base.BaseFragment
+import com.jamesstonedeveloper.contentfeed.data.entities.Post
 
 class FeedFragment : BaseFragment<FeedFragmentBinding>() {
     private val viewModel: FeedViewModel by viewModels()
@@ -21,19 +24,39 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
         super.setUpViews()
         binding.feedRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.feedRv.adapter = feedListAdapter
+        binding.feedSwipeRefreshLayout.setOnRefreshListener {
+            viewModel.startSync()
+        }
     }
 
     override fun observeViewModel() {
         super.observeViewModel()
         binding.viewModel = viewModel
 
+        viewModel.getPostsFromDB()
+        viewModel.startSync()
+
         viewModel.postsList.observe(this, Observer {
             feedListAdapter.submitList(it)
+            binding.feedRv.smoothScrollToPosition(0)
         })
 
         viewModel.addPostClicked.observe(this, Observer {
             findNavController().navigate(R.id.action_feedFragment_to_addPostFragment)
         })
+
+        viewModel.showRefreshing.observe(this, Observer {
+            binding.feedSwipeRefreshLayout.isRefreshing = it
+        })
+
+        viewModel.syncFailed.observe(this, Observer {
+            Snackbar.make(binding.root, "Failed to connect to the server", Snackbar.LENGTH_LONG)
+                .setAction("Retry") {
+                    viewModel.startSync()
+                }.show()
+        })
     }
+
+
 
 }

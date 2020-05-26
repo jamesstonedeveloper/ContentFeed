@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewModel"
             type="com.jamesstonedeveloper.contentfeed.ui.feed.FeedViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:background="@android:color/white"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.feed.FeedFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/feed_rv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/feed_swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/feed_fab"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:fabCustomSize="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@android:color/transparent"
-        android:clickable="true"
-        android:onClick="@{() -> viewModel.goToAddPost()}"
-        android:src="@drawable/add_icon"
-        android:scaleType="centerCrop"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            tools:context=".ui.feed.FeedFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/feed_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/feed_fab"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:onClick="@{() -> viewModel.goToAddPost()}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_icon"
+                app:fabCustomSize="50dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

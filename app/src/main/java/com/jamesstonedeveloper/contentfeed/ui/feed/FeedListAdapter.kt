@@ -1,6 +1,7 @@
 package com.jamesstonedeveloper.contentfeed.ui.feed
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -23,14 +24,19 @@ class FeedListAdapter: ListAdapter<Post, FeedListAdapter.ItemViewHolder>(FeedDif
         }
     }
 
+    override fun submitList(list: List<Post>?) {
+        val sortedList: List<Post> = list?.sortedBy { it.createdAt } ?: listOf()
+        super.submitList(sortedList.reversed())
+    }
+
 }
 
 class FeedDiffCallback: DiffUtil.ItemCallback<Post>() {
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
-        return oldItem.id.equals(newItem.id)
+        return oldItem.id?.equals(newItem.id) ?: false
     }
 
     override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
-        return oldItem.id.equals(newItem.id)
+        return oldItem.title.equals(newItem.title) && oldItem.body.equals(newItem.body)
     }
 }

@@ -43,6 +43,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="10dp"
                 tools:text="Test body" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
