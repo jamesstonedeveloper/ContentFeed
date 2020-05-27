@@ -24,6 +24,7 @@ class FeedViewModel : ViewModel() {
     }
 
     private fun getPostsFromDB() {
+        postsRepository.getPostsFromDB().removeChangeListener(postsRealmListener)
         postsRepository.getPostsFromDB()
             .addChangeListener(postsRealmListener)
         postsRealmListener.onChange(postsRepository.getPostsFromDB())
@@ -40,13 +41,14 @@ class FeedViewModel : ViewModel() {
 
     fun startSync() {
         showRefreshing.postValue(true)
-        getPostsFromDB()
         PostsAPI().syncAllPosts(object : SyncCallback {
             override fun onSyncSuccess() {
                 showRefreshing.postValue(false)
+                getPostsFromDB()
             }
 
             override fun onSyncFailure(message: String) {
+                getPostsFromDB()
                 syncFailed.call()
                 showRefreshing.postValue(false)
             }
