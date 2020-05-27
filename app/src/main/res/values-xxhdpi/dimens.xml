@@ -9,8 +9,8 @@
 
 	//text sizes
 	<dimen name="text_size_small">12sp</dimen>
-	<dimen name="text_size_medium">18sp</dimen>
-	<dimen name="text_size_large">24sp</dimen>
+	<dimen name="text_size_medium">16sp</dimen>
+	<dimen name="text_size_large">20sp</dimen>
 
 	//sizes
 	<dimen name="fab_size">50dp</dimen>

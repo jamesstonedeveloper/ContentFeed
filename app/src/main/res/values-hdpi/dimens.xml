@@ -8,6 +8,6 @@
 	<dimen name="corner_radius_small">3dp</dimen>
 	<dimen name="elevation_post_item">3dp</dimen>
 	<dimen name="text_size_small">7.2sp</dimen>
-	<dimen name="text_size_medium">10.8sp</dimen>
-	<dimen name="text_size_large">14.4sp</dimen>
+	<dimen name="text_size_medium">9.6sp</dimen>
+	<dimen name="text_size_large">12sp</dimen>
 </resources>
