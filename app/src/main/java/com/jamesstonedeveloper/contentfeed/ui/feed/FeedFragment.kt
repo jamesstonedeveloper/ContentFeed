@@ -32,6 +32,8 @@ class FeedFragment : BaseFragment<FeedFragmentBinding>() {
         super.observeViewModel()
         binding.viewModel = viewModel
 
+        viewModel.startSync()
+
         viewModel.postsList.observe(this, Observer {
             feedListAdapter.submitList(it)
             binding.feedRv.smoothScrollToPosition(0)

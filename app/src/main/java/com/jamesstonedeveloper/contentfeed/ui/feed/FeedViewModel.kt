@@ -23,10 +23,6 @@ class FeedViewModel : ViewModel() {
         postsList.postValue(RealmUtils().copyListFromRealm(results))
     }
 
-    init {
-        startSync()
-    }
-
     private fun getPostsFromDB() {
         postsRepository.getPostsFromDB()
             .addChangeListener(postsRealmListener)
