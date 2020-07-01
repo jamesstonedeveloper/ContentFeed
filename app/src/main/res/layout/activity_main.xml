@@ -16,7 +16,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
         android:backgroundTint="@color/colorAccent"
-        app:title="UNiDAYS"
+        app:title="Content Feed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
